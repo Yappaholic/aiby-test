@@ -1,26 +1,108 @@
 body {
-  margin: 0;
-  color: #fff;
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  background-image: linear-gradient(to bottom, #020917, #101725);
-}
-
-.content {
+  height: 100svh;
+  width: 100svw;
+  background-image: url("./images/bg.jpg"), linear-gradient(white, yellow);
+  background-size: cover;
   display: flex;
-  min-height: 100vh;
-  line-height: 1.1;
-  text-align: center;
   flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+p {
+  font-size: 16px;
+}
+
+div#offers {
+  width: 80%;
+  display: flex;
+  gap: 2px;
+}
+
+button {
+  border: 1px white;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 20px;
+}
+
+button p {
+  font-size: 12px;
+}
+
+#continue {
+  color: black;
   justify-content: center;
+  background-color: white;
+  font-size: 16px;
+  font-weight: 600;
 }
 
-.content h1 {
-  font-size: 3.6rem;
-  font-weight: 700;
+#prices {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.content p {
-  font-size: 1.2rem;
-  font-weight: 400;
-  opacity: 0.5;
+a#cross {
+  position: fixed;
+  top: 10%;
+  left: 5%;
+}
+
+img {
+  width: 100%;
+}
+
+.offer p {
+  color: white;
+  position: absolute;
+  font-size: 13px;
+  text-align: start;
+  padding-left: 0.5rem;
+  top: 70%;
+}
+
+div.offer {
+  position: relative;
+  text-wrap: wrap;
+  width: calc(100% / 3);
+  text-align: center;
+}
+
+#img-art {
+  content: url("./images/art.jpg");
+  border-radius: 10px;
+}
+
+#img-styles {
+  content: url("./images/styles.jpg");
+  border-radius: 10px;
+}
+
+#img-avatars {
+  content: url("./images/avatars.jpg");
+}
+
+#access {
+  color: white;
+  font-size: 3rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+footer a {
+  color: gray;
 }

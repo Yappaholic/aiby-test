@@ -7,10 +7,40 @@
   </head>
 
   <body>
-    <p id="Get Unlimited <br>Access">Get Unlimited <br />Access</p>
-    <p>Unlimited Art <br />Creation</p>
-    <p>Restore</p>
-    <p id="Continue">Continue</p>
-    <p>Just {{price}} per year</p>
+    <a id="cross" href="#">X</a>
+    <h1 id="access">Get Unlimited <br />Access</h1>
+    <div id="offers">
+      <div class="offer">
+        <img id="img-art" />
+        <p id="art">Unlimited Art <br />Creation</p>
+      </div>
+      <div class="offer">
+        <img id="img-styles" />
+        <p id="styles">Exclusive <br />Styles</p>
+      </div>
+      <div class="offer">
+        <img id="img-avatars" />
+        <p id="avatars">Magic Avatars With 20% Off</p>
+      </div>
+    </div>
+    <div id="prices">
+      <button id="yearly-button" class="best-offer active">
+        <div>
+          <h2 id="yearly-access">YEARLY ACCESS</h2>
+          <p id="per-year">Just {{price}} per year</p>
+        </div>
+        <p id="per-week">{{price}} per week</p>
+      </button>
+      <button id="weekly-button">
+        <h2 id="weekly-access">WEEKLY ACCESS</h2>
+        <p id="per-week2">{{price}} per week</p>
+      </button>
+      <button id="continue">Continue</button>
+    </div>
+    <footer>
+      <a href="#" id="terms-of-use">Terms of Use</a>
+      <a href="#" id="privacy-policy">Privacy Policy</a>
+      <a href="#" id="restore">Restore</a>
+    </footer>
   </body>
 </html>
