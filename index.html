@@ -1,46 +1,55 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rspack</title>
-  </head>
 
-  <body>
-    <a id="cross" href="#">X</a>
-    <h1 id="access">Get Unlimited <br />Access</h1>
-    <div id="offers">
-      <div class="offer">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rspack</title>
+</head>
+
+<body>
+  <a id="cross" href="#">X</a>
+  <h1 id="access">Get Unlimited <br />Access</h1>
+  <div id="offers">
+    <div class="offer">
+      <div class="offer-img">
         <img id="img-art" />
-        <p id="art">Unlimited Art <br />Creation</p>
       </div>
-      <div class="offer">
+      <p id="art">Unlimited Art <br />Creation</p>
+    </div>
+    <div class="offer">
+      <div class="offer-img">
         <img id="img-styles" />
-        <p id="styles">Exclusive <br />Styles</p>
       </div>
-      <div class="offer">
+      <p id="styles">Exclusive <br />Styles</p>
+    </div>
+    <div class="offer">
+      <div class="offer-img">
         <img id="img-avatars" />
-        <p id="avatars">Magic Avatars With 20% Off</p>
       </div>
+      <p id="avatars">Magic Avatars With 20% Off</p>
     </div>
-    <div id="prices">
-      <button id="yearly-button" class="best-offer active">
-        <div>
-          <h2 id="yearly-access">YEARLY ACCESS</h2>
-          <p id="per-year">Just {{price}} per year</p>
-        </div>
-        <p id="per-week">{{price}} per week</p>
-      </button>
-      <button id="weekly-button">
-        <h2 id="weekly-access">WEEKLY ACCESS</h2>
-        <p id="per-week2">{{price}} per week</p>
-      </button>
-      <button id="continue">Continue</button>
-    </div>
-    <footer>
-      <a href="#" id="terms-of-use">Terms of Use</a>
-      <a href="#" id="privacy-policy">Privacy Policy</a>
-      <a href="#" id="restore">Restore</a>
-    </footer>
-  </body>
+  </div>
+  <div id="prices">
+    <button id="yearly-button" class="best-offer active">
+      <p id="best-offer">BEST OFFER</p>
+      <div>
+        <h2 id="yearly-access">YEARLY ACCESS</h2>
+        <p id="per-year">Just {{price}} per year</p>
+      </div>
+      <p id="per-week">{{price}} per week</p>
+    </button>
+    <button id="weekly-button" class="inactive">
+      <h2 id="weekly-access">WEEKLY ACCESS</h2>
+      <p id="per-week2">{{price}} per week</p>
+    </button>
+    <button id="continue">Continue</button>
+  </div>
+  <footer>
+    <a href="#" id="terms-of-use">Terms of Use</a>
+    <a href="#" id="privacy-policy">Privacy Policy</a>
+    <a href="#" id="restore">Restore</a>
+  </footer>
+</body>
+
 </html>

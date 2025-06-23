@@ -1,19 +1,10 @@
 import "./reset.css";
 import "./index.css";
-import { en, ja, de, fr, pt } from "./i18n/index";
+import { languagesMap } from "./i18n/index";
 
-let preferedLanguage = undefined;
+let preferedLanguage;
 
-// Каждый язык в опциях поиска соответствует своему json файлу
-let languagesMap = new Map([
-  ["en", en],
-  ["ja", ja],
-  ["de", de],
-  ["fr", fr],
-  ["pt", pt],
-]);
-
-let idMap = new Map([
+const idMap = new Map([
   ["access", "Get Unlimited <br>Access"],
   ["art", "Unlimited Art <br>Creation"],
   ["styles", "Exclusive <br>Styles"],
@@ -43,7 +34,7 @@ async function setLanguage(key, value) {
     XPathResult.FIRST_ORDERED_NODE_TYPE,
     null,
   );
-  let node = xpathResult.singleNodeValue;
+  const node = xpathResult.singleNodeValue;
   if (node != null) {
     node.innerHTML = text;
   }
@@ -51,7 +42,7 @@ async function setLanguage(key, value) {
 
 // Поиск нужной опции в URL
 const searchParams = new URLSearchParams(window.location.search);
-let queryLang = searchParams.get("lang");
+const queryLang = searchParams.get("lang");
 
 // Если опция отсутствует в URL/не находится в списке доступных языков,
 // основным языком становится английский
@@ -70,7 +61,27 @@ document.documentElement.setAttribute("lang", preferedLanguage);
 
 if (preferedLanguage !== "en") {
   // Для каждого текста внутри сайта делается замена на выбранный язык
-  for (let [key, value] of idMap) {
+  for (const [key, value] of idMap) {
     setLanguage(key, value);
   }
 }
+
+const yearlyButton = document.querySelector("#yearly-button");
+const weeklyButton = document.querySelector("#weekly-button");
+
+function changeActive(e) {
+  const target = e.currentTarget;
+  const anotherButton =
+    e.currentTarget.id === "yearly-button" ? weeklyButton : yearlyButton;
+  if (target.classList.contains("active")) {
+    return;
+  } else {
+    target.classList.toggle("active");
+    target.classList.toggle("inactive");
+    anotherButton.classList.toggle("inactive");
+    anotherButton.classList.toggle("active");
+  }
+}
+
+yearlyButton.addEventListener("click", (e) => changeActive(e));
+weeklyButton.addEventListener("click", (e) => changeActive(e));

@@ -1,7 +1,8 @@
 body {
   height: 100svh;
   width: 100svw;
-  background-image: url("./images/bg.jpg"), linear-gradient(white, yellow);
+  background-image: linear-gradient(210deg, transparent 10%, black 55%),
+    url("./images/bg.jpg");
   background-size: cover;
   display: flex;
   flex-direction: column;
@@ -12,26 +13,95 @@ body {
 
 p {
   font-size: 16px;
+  font-weight: 200;
 }
 
 div#offers {
-  width: 80%;
+  width: 90%;
   display: flex;
   gap: 2px;
 }
 
 button {
-  border: 1px white;
-  width: 80%;
+  border: 1px solid transparent;
+  width: 100%;
+  height: 3rem;
   display: flex;
   justify-content: space-between;
-  margin: 0.5rem;
-  padding: 0.5rem;
-  border-radius: 20px;
+  align-items: center;
+  margin: 0.2rem;
+  padding: 1.5rem;
+  border-radius: 2rem;
+}
+
+button.best-offer {
+  position: relative;
+}
+
+#best-offer {
+  font-size: 0.65rem;
+  font-weight: 600;
+  position: absolute;
+  top: -0.6rem;
+  left: 65%;
+  background: linear-gradient(to right, #a622f1, #102eda);
+  padding: 0.1rem 1rem 0.1rem 1rem;
+  border-radius: 1rem;
+  text-align: center;
+}
+
+#best-offer::before {
+  position: relative;
+  background: linear-gradient(to right, white, yellow);
+  padding: initial;
+  width: 100%;
+  height: 100%;
+}
+
+button :not(#continue) {
+  color: white;
+}
+
+button#continue {
+  margin-top: 0.6rem;
+}
+
+button.active {
+  background-color: #24212e;
+  border: 1px solid white;
+}
+
+button.inactive {
+  background-color: #535359;
+}
+
+button.active #best-offer {
+  background: white;
+  color: black;
+}
+
+button.inactive.best-offer {
+  position: relative;
+}
+
+button.inactive.best-offer::before {
+  border-radius: 2rem;
+  content: "";
+  background-image: linear-gradient(to right, #a622f1 65%, #102eda 100%);
+  top: -2px;
+  left: -2px;
+  bottom: -2px;
+  right: -2px;
+  position: absolute;
+  z-index: -1;
 }
 
 button p {
   font-size: 12px;
+}
+
+button div {
+  text-align: left;
 }
 
 #continue {
@@ -44,6 +114,7 @@ button p {
 
 #prices {
   display: flex;
+  width: 90%;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
@@ -57,6 +128,18 @@ a#cross {
 
 img {
   width: 100%;
+  position: relative;
+}
+
+div.offer-img::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent 50%, #9523ee 225%);
+  border-radius: 10px;
 }
 
 .offer p {
@@ -91,7 +174,7 @@ div.offer {
 
 #access {
   color: white;
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 600;
   text-align: center;
 }
@@ -101,8 +184,11 @@ footer {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
 }
 
 footer a {
   color: gray;
+  font-size: 0.6rem;
 }
